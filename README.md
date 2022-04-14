@@ -12,7 +12,7 @@
 - Este arquivo encontra-se na raíz de projetos maven. O mavem fica resposável por gerenciar as dependêcias informadas pelo usuário.
 - O arquivo presente neste repositório está pronto com dependêncais do __Spring Framework__.
 
-Dependêncais inseridas:
+Dependêncais inseridas: (apenas para exemplo)
 - [x] Spring Web
 - [x] Thymeleaf
 - [x] Spring Data JPA
