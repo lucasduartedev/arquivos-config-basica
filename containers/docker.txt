@@ -1,0 +1,75 @@
+# CONFIGURAÇÕES PÓS INSTALAÇÃO:
++ Configurações
+  - Docker Engine
+    - DOCKER EXPERIMENTAL:TRUE
+
+
+# COMANDOS DOCKER (terminal)
+- Listar os contêiners instalados
+docker ps -a
+Obs: -a Mostra containers parados
+
+- Listar imagens baixadas
+docker images
+
+- Baixar imagem
+docker pull “NomeDaImagem”:”versão”
+
+- Remover imagem
+docker rmi “nomeImagem”
+
+- Remover contêiner
+Docker rm “idImagem”
+
+- Iniciar contêiner
+docker start “idImagem”
+
+- Acessar contêiner
+docker attach “idImagem”
+
+- Parar contêiner
+docker stop “idImagem”
+
+- Sair do contêiner e mantê-lo ativo
+CTRL + P + Q
+
+- Informações do contêiner
+docker inspect “idImagem”
+
+
+# ATALHOS CRIAR CONTAINER
+UBUTUN: docker run -t -i --privileged ubuntu bash
+MySQL: docker run --name meuBancoMysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql
+Postgres: docker run --name meuBancoPostgres -e POSTGRES_PASSWORD=root -d -p 5432:5432 postgres:alpine
+Redis: docker run --name bancoRedis -d -p 6379:6379 -i -t redis
+MongoDB: docker run -d -p 27017:27017 --name bancoMongo mongo:latest
+Banco Oracle: docker run -d -p 49161:1521 oracleinanutshell/oracle-xe-11g
+Tomcat: docker run -it --rm -p 8888:8080 tomcat:9.0
+
+Banco Oracle:
+- Baixar Imagem:
+docker pull oracleinanutshell/oracle-xe-11g
+
+
+# ATALHOS DE ACESSO
+MySQL: docker exec -it “nome-ou-id” mysql -p
+Postgres: docker exec -it “nome-ou-id” bash
+Postgres: docker exec “nome-ou-id” psql -U postgres
+Redis: docker exec -it “nome-ou-id” bash
+Redis: docker exec -it “nome-ou-id” redis-cli
+MongoDB: docker exec -it “nome-ou-id” bash
+
+
+
+# DOCKER COMPOSE
+
+- Levantar containers
+docker-compose up -d
+# -d serve para rodar as imagens em background
+
+- Derrubar containers
+docker-compose stop
+
+
+# OUTROS | Sites
+woliveiras.com.br/posts/comandos-mais-utilizados-no-docker/
